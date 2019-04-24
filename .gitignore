@@ -1,2 +1,8 @@
 *.class
 *.log
+
+# ide files
+.idea
+
+# compilation output & tmp files
+target
