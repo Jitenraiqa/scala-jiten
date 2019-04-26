@@ -16,7 +16,29 @@ def deepsum(list: List[List[Int]]): Int = list match {
 
 }
 
-
-
-
 println(deepsum(List(List(1,2), List(), List(), List(3), List(4,5))))
+
+
+
+
+// without helper methods
+
+def deepSum(xs: List[List[Int]]): Int = xs match {
+  case List() => 0
+  case (y :: yss) => y.head + deepSum(yss.tail)
+  case ((y :: yss) :: xss) =>  (y :: yss).head + deepSum(xss.tail)
+  case ((y :: yss) :: (x :: xss)) =>  (y :: yss).head + deepSum(x :: xss.tail)
+  case _ => "out of scope"
+
+
+
+
+
+
+}
+
+
+
+
+
+println(deepsum(List(List(1,2), List(3,2), List(), List(3), List(4,5))))
